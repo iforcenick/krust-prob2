@@ -5,9 +5,7 @@ import (
 	"math"
 )
 
-func main() {
-	var n int
-	fmt.Scanf("%d", &n)
+func getSum(n int) int {
 	n -= 1
 
 	cnt3 := math.Floor(float64(n) / 3)
@@ -16,5 +14,12 @@ func main() {
 	sum3 := 3 * (cnt3 * (cnt3 + 1) / 2)
 	sum5 := 5 * (cnt5 * (cnt5 + 1) / 2)
 	sum15 := 15 * (cnt15 * (cnt15 + 1) / 2)
-	fmt.Println(sum3 + sum5 - sum15)
+
+	return int(sum3 + sum5 - sum15)
+}
+
+func main() {
+	var n int
+	fmt.Scanf("%d", &n)
+	fmt.Println(getSum(n))
 }
